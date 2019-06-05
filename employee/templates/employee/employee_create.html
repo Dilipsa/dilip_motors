@@ -1,0 +1,15 @@
+{% extends "employee/base.html" %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 offset-3">
+        <form method=="POST" class="employee_details-form">{% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-danger">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <br><br>
+{% endblock %}

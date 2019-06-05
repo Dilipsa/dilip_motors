@@ -1,0 +1,31 @@
+{% extends "employee/base.html" %}
+{% block content %}
+<div class="container">
+  <h4>Employee  list and details</h4>
+  {% for d  in detail %}
+  <table class="table table-bordered table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">si</th>
+        <th scope="col">Employee name</th>
+        <th scope="col">Employee id</th>
+        <th scope="col">Employee salary</th>
+        <th scope="col">Department</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Joining date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+          <td><a href="{% url 'employee_detail' pk=d.pk %}">{{ d.name }}</a></td>
+          <td>{{ d.id }}</td>
+          <td>{{ d.salary }}</td>
+          <td>{{ d.department }}</td>
+          <td>{{ d.gender }}</td>
+          <td>{{ d.joined }}</td>
+      </tr>
+    </tbody>
+  </tabde>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "employee/base.html" %}
+{% block content %}
+<div class="container">
+  <h4>Employee Details</h4>
+  <table class="table table-bordered table-dark">
+    <thead>
+      <tr>
+        <th scope="col">si</th>
+        <th scope="col">Employee name</th>
+        <th scope="col">Employee id</th>
+        <th scope="col">Employee salary</th>
+        <th scope="col">Department</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Joining date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+          <td>{{ emp_detail.name }}</td>
+          <td>{{ emp_detail.id }}</td>
+          <td>{{ emp_detail.salary }}</td>
+          <td>{{ emp_detail.department }}</td>
+          <td>{{ emp_detail.gender }}</td>
+          <td>{{ emp_detail.joined }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}
