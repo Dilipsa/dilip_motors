@@ -1,7 +1,7 @@
 {% extends "employee/base.html" %}
 {% block content %}
 <div class="container">
-  <h4>Employee Details </h4>
+  <h4>Employee Details <a href="{% url 'employee_edit' pk=emp_detail.pk %}"><span style="color:Tomato; font-size:1em;"><i class="fas fa-pencil-alt"></i> </span> </a> </h4>
   <table class="table table-bordered table-dark">
     <thead>
       <tr>

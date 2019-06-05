@@ -22,3 +22,16 @@ def employee_new(request):
     else:
         form = Employee_detailForm()
     return render(request, 'employee/employee_create.html', {'form': form})
+
+def employee_edit(request, pk):
+    post = get_object_or_404(Employee_detail, pk=pk)
+    if request.method=="POST":
+        form = Employee_detailForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.joined = timezone.now()
+            post.save()
+            return redirect('employee_detail', pk=post.pk)
+    else:
+        form = Employee_detailForm(instance=post)
+    return render(request, 'employee/employee_create.html', {'form': form})
