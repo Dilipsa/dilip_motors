@@ -9,18 +9,16 @@ def employee_list(request):
 
 def employee_detail(request, pk):
     emp_detail=get_object_or_404(Employee_detail, pk=pk)
-    return render(request,'employee/employee_detail.html',{'emp_detail':emp_detail})
+    return render(request,'employee/employee_detail.html',{'emp_detail': emp_detail})
 
 def employee_new(request):
-    # form=Employee_detailForm()
-    # return render(request, 'employee/employee_create.html',{'form':form})
-    if request.method=="POST":
-        form=Employee_detailForm(request.POST)
+    if request.method == "POST":
+        form = Employee_detailForm(request.POST)
         if form.is_valid():
-            post=form.save(commit=False)
-            post.joined=timezone.now
+            post = form.save(commit=False)
+            post.joined = timezone.now()
             post.save()
-            return redirect('Employee_detail', pk=post.pk)
+            return redirect('employee_detail', pk=post.pk)
     else:
-        post=Employee_detailForm()
-    return render(request, 'employee/employee_create.html',{'post':post})
+        form = Employee_detailForm()
+    return render(request, 'employee/employee_create.html', {'form': form})
