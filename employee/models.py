@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
+from vehicle.models import Car
 
 class Employee_detail(models.Model):
     name = models.CharField(max_length=50)
@@ -9,7 +10,7 @@ class Employee_detail(models.Model):
     department= models.CharField(max_length=50)
     gender = models.CharField(max_length=20)
     joined = models.DateTimeField(default=timezone.now)
-    # car_allocated = models.ForeignKey(vehicle.Car.car_id, on_delete=models.CASCADE)
+    car_allocated = models.ForeignKey('vehicle.Car', on_delete=models.CASCADE)
 
 
     def __str__(self):
