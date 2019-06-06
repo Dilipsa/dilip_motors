@@ -1,6 +1,10 @@
-h1, h2, h3{
-color: #dd02b1;
-}
-h4{
+
+/* h4{
   color: #20cc23;
+} */
+
+
+h1, h2, h3, h4{
+    color: #C25100;
+    font-family: 'Lobster';
 }

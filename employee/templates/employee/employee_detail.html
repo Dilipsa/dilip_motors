@@ -2,7 +2,7 @@
 {% block content %}
 <div class="container">
   <h4>Employee Details {% if user.is_authenticated %}<a href="{% url 'employee_edit' pk=emp_detail.pk %}"><span style="color:Tomato; font-size:1em;"><i class="fas fa-pencil-alt"></i> </span>{% endif %} </a> </h4>
-  <table class="table table-bordered table-dark">
+  <table class="table table-bordered table-dark ">
     <thead>
       <tr>
         <th scope="col">si</th>

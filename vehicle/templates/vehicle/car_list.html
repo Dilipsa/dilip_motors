@@ -1,34 +1,37 @@
 {% extends "vehicle/base.html" %}
 {% block content %}
-<h3 class="text-center">CAR LISTS</h3>
-{% for l in list  %}
+
+
 <div class="container">
 
   <div class="row">
     <div class="col-md-8 offset-2">
-      <table class="table table-bordered table-dark">
+      <h4>LISTS OF CARS</h4>
+      {% for l in list  %}
+      <table class="table table-bordered table-dark a">
         <thead>
           <tr>
             <th scope="col">si</th>
-            <td>car id number</td>
-            <td>car name</td>
-            <td>car variant</td>
-            <td>fuel type</td>
-            <td>color</td>
+            <th scope="col">car id number</th>
+            <th scope="col">car name</th>
+            <th scope="col">car variant</th>
+            <th scope="col">fuel type</th>
+            <th scope="col">color</th>
           </tr>
         </thead>
         <tbody>
-          <th scope="row">{{ l.id }}</th>
-          <td>{{ l.car_id }}</td>
-          <td><a href="{% url 'car_detail' pk=l.pk %}">{{ l.car_name }}s</a> </td>
-          <td>{{ l.car_variant }}</td>
-          <td>{{ l.car_fuel }}</td>
-          <td>{{ l.car_color }}</td>
+          <th  scope="row">{{ l.id }}</th>
+          <td >{{ l.car_id }}</td>
+          <td ><a href="{% url 'car_detail' pk=l.pk %}">{{ l.car_name }}s</a> </td>
+          <td >{{ l.car_variant }}</td>
+          <td >{{ l.car_fuel }}</td>
+          <td >{{ l.car_color }}</td>
         </tbody>
       </table>
+      {% endfor %}
     </div>
-
   </div>
 </div>
-{% endfor %}
+
+
 {% endblock %}
