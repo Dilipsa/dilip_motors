@@ -9,4 +9,4 @@ class Car(models.Model):
     car_color = models.CharField(max_length=20)
 
     def __str___(self):
-        return self.c_name
+        return self.car_name
