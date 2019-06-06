@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from vehicle.views import car_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('employee.urls')),
-    path('/branch/', include('branches.urls')),
-
+    path('', include('vehicle.urls')),
 ]
